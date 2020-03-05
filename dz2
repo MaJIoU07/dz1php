@@ -1,0 +1,75 @@
+//1
+$users = [
+	[
+		'id' => 1,
+		'name' => 'adada1'
+	],
+	[
+		'id' => 2,
+		'name' => 'adada2'
+	]
+];
+function pluck($arr, $key);
+{
+	foreach ($arr as $value) {
+		$res[] = $value[$key];
+	}
+	foreach ($res as $value) {
+		echo $value.", ";		
+	}	
+}
+pluck ($users,'name');
+//2
+$chislo = [26, 17, 136, 12, 79, 15];
+$sum=0;
+foreach ($chislo as $value) {
+	$sum= $sum + pow($value, 2);
+}
+echo "$sum";
+
+//3
+$arr = [];
+for ($i=1; $i <= 112; $i+=3) { 
+	$arr[]=$i;
+}
+foreach ($arr as $value) {
+	echo $value.",";
+}
+
+//4
+function get_order($string)
+{
+	$arr = explode(" ", $string);
+	sort($arr);
+	$string = implode(" ", $arr);
+	echo $string;
+}
+get_order("ноты акустика гитара");
+
+//5
+function get_dublicate($arr)
+{
+	$res = array_unique($arr);
+		if (sizeof($arr)==sizeof($res)) {
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+}
+var_dump(get_dublicate([5,10,10,20,35]));
+
+//6
+$arr1 = [];
+$arr2 = [];
+for ($i=5; $i < 1000; $i++) { 
+	$arr1[]=$i;
+}
+foreach ($arr1 as $value) {
+	$arr2[]=$value*2;
+}
+$rand = array_rand($arr2, 5);
+foreach ($rand as $value) {
+	echo $value.", ";
+}
